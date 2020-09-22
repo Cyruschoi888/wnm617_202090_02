@@ -1,0 +1,315 @@
+*,*::before,*::after{
+	box-sizing: border-box;
+}
+
+:root {
+    --color-neutral-dark: #000000ff;
+    --color-neutral-medium: #999;
+    --color-neutral-light: #ffffffff;
+
+    --color-main-dark: #034066;
+    --color-main-medium: #1ba2f4;
+    --color-main-light: #bde6ff;
+
+    --header-height:3rem;
+
+	--gap-size: 1rem;
+	--contianer-width: 1000px;
+
+	--font-serif: "Raleway", Serif;
+	--font-sans: Raleway, Poppins, sans-serif;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+  background-color: #e01f3cff;
+  color:white;
+}
+
+abbr {
+	text-decoration: none;
+
+	}
+
+
+body{
+	margin: 0;
+    font-size: 100%;
+    font-family: var(--font-sans);
+    color: #000000ff;
+    background-color: #ffffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+   font-family: var(--font-serif);
+}
+
+p{
+	line-height:1.5em;
+}
+
+
+
+
+.summary{
+	width: 80%;
+	margin-left: 1em;
+	padding: 1em;
+	font-size: 22px;
+	font-weight: 800;
+}
+
+.preamble{
+	margin-left: 1em;
+	padding: 2.2em;
+}
+
+
+
+.explanation {
+    background-color: #e0e0e0b5;
+    position: absolute;
+    top: 68em;
+    width: 30%;
+    margin: 1em;
+    padding: 1em;
+}
+
+.participation{
+    background-color: #e0e0e0b5;
+    position: absolute;
+    top: 69em;
+    width: 30%;
+    margin-left: 33%;
+    padding: 1em;
+}
+
+
+.benefits{
+    background-color: #e0e0e0b5;
+    position: absolute;
+    top: 69em;
+    width: 30%;
+    margin-left: 66%;
+    padding: 1em;
+}
+
+
+ 
+.requirements{
+    background-color: #8e8e8eb0;
+    padding: 1em;
+    margin: 0 20em;
+    position: absolute;
+    top: 110em;
+    text-align: center;
+
+}
+
+.requirements h3{
+  font-size: 30px;
+  color:black;
+  font-weight: 700;
+
+}
+
+.requirements p{
+  font-size: 15px;
+  color:white;
+
+
+}
+
+.requirements a{
+  font-size: 15px;
+  color:white;
+
+}
+
+h2 {
+    color: ;
+    font-weight: 900;
+    font-size: 6em;
+    letter-spacing: 1px;
+    line-height: 1em;
+    margin-left: 0.2em
+
+  }
+
+.intro {
+	width: 60%;
+
+}
+
+.intro h1{
+	background: #e01f3cff;
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 1em;
+    padding: 0.5em 1em;
+}
+
+header{
+	padding-left: 1em;
+}
+
+aside.sidebar {
+	background-color: #999;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 30%;
+    padding: 1em;
+    margin-right: 4em;
+
+}
+
+footer{
+	text-align: center;
+	position: absolute;
+	top: 150em;
+	width:40%;
+    padding: 1em;
+    margin:0 30em;
+    background-color:#e01f3cff; 
+    letter-spacing: 8px;
+    line-height: 1em;
+}
+
+footer a{
+	text-decoration: none;
+	color: white;
+}
+
+@media (max-width:1200px) {
+	aside.sidebar {
+    position: absolute;
+    right: 0;
+    top: 65%;
+    width: 30%;
+}
+
+.preamble{
+	margin-left: 1em;
+	padding: 2.2em;
+}
+
+.explanation {
+    background-color: #e0e0e0b5;
+    position: absolute;
+    top: 70em; 
+    width: 30%;
+    margin: 1em;
+    padding: 1em;
+}
+
+.participation {
+    background-color: #e0e0e0b5;
+    position: absolute;
+    top: 71em;
+    width: 30%;
+    margin-left: 33%;
+    padding: 1em;
+}
+
+.benefits {
+    background-color: #e0e0e0b5;
+    position: absolute;
+    top: 71em;
+    width: 30%;
+    margin-left: 66%;
+    padding: 1em;
+}
+
+.requirements {
+    background-color: #8e8e8eb0;
+    padding: 1em;
+    margin:0em;
+    position: absolute;
+    top: 117em;
+    text-align: center;
+    width: 100%;
+}
+
+footer{
+	text-align: center;
+	position: absolute;
+    padding: 1em;
+    margin: 0 20em;
+}
+}
+
+@media (max-width:850px) {
+	aside.sidebar {
+    position: inherit;
+    width: 100%;
+    margin: 1em;   
+}
+	.intro{
+		width: 100%;
+	}
+	.preamble {
+    margin:0 1em;
+    padding: 1em;
+}
+
+	.explanation{
+		position: inherit;
+		margin: 0 1em;
+		right: 20em;
+        top: 80em;
+        padding: 1em;
+        width: 100%;
+	}
+	.participation{
+		position: inherit;
+		margin: 1em;
+		right: 20em;
+        top: 80em;
+        padding: 1em;
+        width: 100%;
+	}
+
+
+
+	.requirements{
+		position: inherit;
+		margin: 1em;
+		right: 20em;
+        top: 80em;
+        padding: 1em;
+        width: 100%;
+	}
+
+	.benefits{
+		position: inherit;
+		margin: 1em;
+		right: 20em;
+        top: 80em;
+        padding: 1em;
+        width: 100%;
+	}
+
+	footer{
+		position: inherit;
+	    margin: 1em;
+		right: 20em;
+        top: 80em;
+        padding: 1em;
+        width: 100%;
+	}
+}
+
+@media (max-width:500px) {
+	
+}
+
