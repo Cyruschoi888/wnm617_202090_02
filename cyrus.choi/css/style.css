@@ -108,7 +108,13 @@ a:hover {
 }
 
 
-
+figure {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
 
 
 .nav ul {
@@ -120,7 +126,21 @@ a:hover {
 
 
 
-
+.grid.gap {
+    grid-gap: var(--gap-size);
+    gap: var(--gap-size);
+}
+.piggylist {
+    margin: 1em 0;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+   /*  --gap-size: 1em;*/
+}
+.piggycol{
+   grid-column: span 6;
+}
 
 
 

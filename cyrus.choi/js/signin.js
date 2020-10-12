@@ -12,9 +12,9 @@ const checkSigninForm = () => {
    } else {
       // not logged in
       console.log('failure');
-      sessionStorage.removeItem('userId');
-
+      sessionStorage.removeItem('userId');    
       // DO SOMETHING HERE
+      $( ".failure" ).removeClass( "disapear" );
    }
 
    checkUserId();
@@ -35,7 +35,6 @@ const checkUserId = () => {
          $.mobile.navigate("#recent-page");
    }
 }
-
 
 
               

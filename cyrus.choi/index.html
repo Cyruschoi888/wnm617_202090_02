@@ -7,6 +7,8 @@
 
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
    <link rel="stylesheet" href="css/app.css">
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
 
@@ -21,8 +23,9 @@
    <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column">
          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-            <img src="images/logo.png" style="width:80vw;height:80vw;" alt="Logo">
+            <img src="images/logo2.png" style="width:50vw;height:50vw;" alt="Logo">
          </div>
+         <div class="failure form-control disapear" id="failure_text">Login failed. Please try again.</div>        
          <form id="signin-form" data-ajax="false">
             <div class="form-control">
                <label for="signin-username" class="form-label">Username</label>
@@ -69,122 +72,48 @@
       </div>
    </section>
 
+
+
    <section data-role="page" id="recent-page">
       <div data-role="main">
          <div class="floater top right">
-            <div class="btn-circle" data-activate="#recent-add-modal">&equiv;</div>
+            <div class="btn-circle" data-activate="#recent-profile-modal">&equiv;</div>
          </div>
          <div class="floater bottom right">
-            <div class="btn-circle" data-toggle="#recent-profile-modal">&plus;</div>
+            <div class="btn-circle" data-activate="#list-add-modal">&plus;</div>
          </div>
 
-
-         <div class="modal" id="recent-add-modal">
-            <div class="modal-back" data-deactivate="#recent-add-modal"></div>
-            <div class="modal-drawer bottom">
-               <div class="modal-head">head</div>
-               <div class="modal-body">body</div>
-            </div>
-         </div>
 
          <div class="modal" id="recent-profile-modal">
+            <div class="modal-back" data-deactivate="#recent-profile-modal"></div>
             <div class="modal-drawer left">
-               <div class="modal-head">head</div>
-               <div class="modal-body">body</div>
+               <div class="scrollable">
+                  <div class="profile" id="user-profile">
+                   <div class="backgroundcolor-profile">
+                     <div class="flex-none" style="text-align: center">
+                        <a href="#settings-profile-upload-page">
+                           <img src="images/userimage.jpg" alt 
+                           class="userimage" id="profilephoto">
+                         </a>
+                  <h3 style="color:white;"></h3>
+                  <div style="color:white;"><h2>Username</h2></div>
+                  <div style="color:white;"><h2>Email</h2></div>
+                      </div>
+                     </div>
+                  </div>
+                  
+                  <div class="profile-body">
+                     <ul class="profile-settings">
+                        <li><a href="#settings-profile-page">Profile</a></li>
+                        <li><a href="#settings-logout-page">Settings</a></li>
+                        <li><a href="#">Help</a></li>
+                     </ul>
+                  </div>
+                  </div>
+            </div>
+            <div class="modal-foot display-flex">
             </div>
          </div>
-      </div>
-      <footer data-role="footer">
-         <ul>
-            <li><a href="#recent-page">Recent</a></li>
-            <li><a href="#list-page">List</a></li>
-            <li><a href="#user-profile-page">Profile</a></li>
-         </ul>
-      </footer>
-   </section>
-
-   <section data-role="page" id="list-page">
-      <header data-role="header">
-         <h1>List Page</h1>
-         <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#" data-activate="#list-add-modal">&plus;</a></li>
-         </ul>
-      </header>
-      <div data-role="main">
-         <div class="overscroll">
-            <ul>
-               <!-- li*10>a[href=#animal-profile-page]{Animal $} -->
-               <li><a href="#animal-profile-page">Animal 1</a></li>
-               <li><a href="#animal-profile-page">Animal 2</a></li>
-               <li><a href="#animal-profile-page">Animal 3</a></li>
-               <li><a href="#animal-profile-page">Animal 4</a></li>
-               <li><a href="#animal-profile-page">Animal 5</a></li>
-               <li><a href="#animal-profile-page">Animal 6</a></li>
-               <li><a href="#animal-profile-page">Animal 7</a></li>
-               <li><a href="#animal-profile-page">Animal 8</a></li>
-               <li><a href="#animal-profile-page">Animal 9</a></li>
-               <li><a href="#animal-profile-page">Animal 10</a></li>
-               <li><a href="#animal-profile-page">Animal 1</a></li>
-               <li><a href="#animal-profile-page">Animal 2</a></li>
-               <li><a href="#animal-profile-page">Animal 3</a></li>
-               <li><a href="#animal-profile-page">Animal 4</a></li>
-               <li><a href="#animal-profile-page">Animal 5</a></li>
-               <li><a href="#animal-profile-page">Animal 6</a></li>
-               <li><a href="#animal-profile-page">Animal 7</a></li>
-               <li><a href="#animal-profile-page">Animal 8</a></li>
-               <li><a href="#animal-profile-page">Animal 9</a></li>
-               <li><a href="#animal-profile-page">Animal 10</a></li>
-               <li><a href="#animal-profile-page">Animal 1</a></li>
-               <li><a href="#animal-profile-page">Animal 2</a></li>
-               <li><a href="#animal-profile-page">Animal 3</a></li>
-               <li><a href="#animal-profile-page">Animal 4</a></li>
-               <li><a href="#animal-profile-page">Animal 5</a></li>
-               <li><a href="#animal-profile-page">Animal 6</a></li>
-               <li><a href="#animal-profile-page">Animal 7</a></li>
-               <li><a href="#animal-profile-page">Animal 8</a></li>
-               <li><a href="#animal-profile-page">Animal 9</a></li>
-               <li><a href="#animal-profile-page">Animal 10</a></li>
-               <li><a href="#animal-profile-page">Animal 1</a></li>
-               <li><a href="#animal-profile-page">Animal 2</a></li>
-               <li><a href="#animal-profile-page">Animal 3</a></li>
-               <li><a href="#animal-profile-page">Animal 4</a></li>
-               <li><a href="#animal-profile-page">Animal 5</a></li>
-               <li><a href="#animal-profile-page">Animal 6</a></li>
-               <li><a href="#animal-profile-page">Animal 7</a></li>
-               <li><a href="#animal-profile-page">Animal 8</a></li>
-               <li><a href="#animal-profile-page">Animal 9</a></li>
-               <li><a href="#animal-profile-page">Animal 10</a></li>
-               <li><a href="#animal-profile-page">Animal 1</a></li>
-               <li><a href="#animal-profile-page">Animal 2</a></li>
-               <li><a href="#animal-profile-page">Animal 3</a></li>
-               <li><a href="#animal-profile-page">Animal 4</a></li>
-               <li><a href="#animal-profile-page">Animal 5</a></li>
-               <li><a href="#animal-profile-page">Animal 6</a></li>
-               <li><a href="#animal-profile-page">Animal 7</a></li>
-               <li><a href="#animal-profile-page">Animal 8</a></li>
-               <li><a href="#animal-profile-page">Animal 9</a></li>
-               <li><a href="#animal-profile-page">Animal 10</a></li>
-               <li><a href="#animal-profile-page">Animal 1</a></li>
-               <li><a href="#animal-profile-page">Animal 2</a></li>
-               <li><a href="#animal-profile-page">Animal 3</a></li>
-               <li><a href="#animal-profile-page">Animal 4</a></li>
-               <li><a href="#animal-profile-page">Animal 5</a></li>
-               <li><a href="#animal-profile-page">Animal 6</a></li>
-               <li><a href="#animal-profile-page">Animal 7</a></li>
-               <li><a href="#animal-profile-page">Animal 8</a></li>
-               <li><a href="#animal-profile-page">Animal 9</a></li>
-               <li><a href="#animal-profile-page">Animal 10</a></li>
-            </ul>
-         </div>
-      </div>
-      <footer data-role="footer">
-         <ul>
-            <li><a href="#recent-page">Recent</a></li>
-            <li><a href="#list-page">List</a></li>
-            <li><a href="#user-profile-page">Profile</a></li>
-         </ul>
-      </footer>
 
       <div class="modal" id="list-add-modal">
          <div class="modal-back" data-deactivate="#list-add-modal"></div>
@@ -209,12 +138,7 @@
             </div>
          </div>
       </div>
-   </section>
 
-   <section data-role="page" id="user-profile-page">
-      <div data-role="main">
-         User Profile
-         <p><a href="#" class="js-logout">Logout</a></p>
       </div>
       <footer data-role="footer">
          <ul>
@@ -225,17 +149,307 @@
       </footer>
    </section>
 
-   <section data-role="page" id="animal-profile-page">
+
+   <section data-role="page" id="list-page">
       <header data-role="header">
-         <h1>Animal Page</h1>
+         <h1>List Page</h1>
+
+      </header>
+      <div data-role="main">
+          <div class="floater bottom right">
+            <div class="btn-circle" data-activate="#piggy-add-modal">&plus;</div>
+         <!-- <div class="btn-circle" data-activate="#piggy-add-modal">&plus;</div> 
+          -->          
+         </div>
+           
+                 
+         <div class="overscroll">
+            <div class="grid gap piggylist">
+            <div class="piggycol">
+            <a href="#piggy-profile-page" class="display-block">
+              <figure class="piggy-figure">
+               <div class="piggy-image">
+                  <img src="images/piggyimg.jpg" alt>   
+               </div>
+             <figcaption class="piggy-desc">
+               <div>
+                  <h3 class="title">Piggy</h3>
+               </div>               
+             </figcaption>
+            </figure>
+            </a>
+            </div>
+
+            <div class="piggycol">
+            <a href="#piggy-profile-page" class="display-block">
+              <figure class="piggy-figure">
+               <div class="piggy-image">
+                  <img src="images/piggyimg.jpg" alt>   
+               </div>
+             <figcaption class="piggy-desc">
+               <div>
+                  <h3 class="title">Piggy</h3>
+               </div>               
+             </figcaption>
+            </figure>
+            </a>
+            </div>
+
+            <div class="piggycol">
+            <a href="#piggy-profile-page" class="display-block">
+              <figure class="piggy-figure">
+               <div class="piggy-image">
+                  <img src="images/piggyimg.jpg" alt>   
+               </div>
+             <figcaption class="piggy-desc">
+               <div>
+                  <h3 class="title">Piggy</h3>
+               </div>               
+             </figcaption>
+            </figure>
+            </a>
+            </div>
+
+            <div class="piggycol">
+            <a href="#piggy-profile-page" class="display-block">
+              <figure class="piggy-figure">
+               <div class="piggy-image">
+                  <img src="images/piggyimg.jpg" alt>   
+               </div>
+             <figcaption class="piggy-desc">
+               <div>
+                  <h3 class="title">Piggy</h3>
+               </div>               
+             </figcaption>
+            </figure>
+            </a>
+            </div>
+
+            <div class="piggycol">
+            <a href="#piggy-profile-page" class="display-block">
+              <figure class="piggy-figure">
+               <div class="piggy-image">
+                  <img src="images/piggyimg.jpg" alt>   
+               </div>
+             <figcaption class="piggy-desc">
+               <div>
+                  <h3 class="title">Piggy</h3>
+               </div>               
+             </figcaption>
+            </figure>
+            </a>
+            </div>
+                                                
+          </div>
+         </div>
+      </div>
+
+      <div class="modal" id="piggy-add-modal">
+         <div class="modal-back" data-deactivate="#piggy-add-modal"></div>
+         <form id="list-add-form" data-ajax="false" class="modal-popup">
+            <div class="modal-head">Add Animal</div>
+            <div class="modal-body">
+               <div class="form-control">
+                  <label for="piggy-add-name" class="form-label">Name</label>
+                  <input id="piggy-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
+               </div>
+               <div class="form-control">
+                  <label for="piggy-add-type" class="form-label">Type</label>
+                  <input id="piggy-add-type" type="text" class="form-input" data-role="none" placeholder="Type animal type">
+               </div>
+               <div class="form-control">
+                  <label for="piggy-add-breed" class="form-label">Breed</label>
+                  <input id="piggy-add-breed" type="text" class="form-input" data-role="none" placeholder="Type animal breed">
+               </div>
+            </div>
+            <div class="modal-foot">
+               <input type="submit" value="Save" data-role="none">
+            </div>
+         </div>
+      </div>
+
+      <!-- <div class="modal" id="list-add-modal">
+         <div class="modal-back" data-deactivate="#list-add-modal"></div>
+         <form id="list-add-form" data-ajax="false" class="modal-popup">
+            <div class="modal-head">Add Animal</div>
+            <div class="modal-body">
+               <div class="form-control">
+                  <label for="list-add-name" class="form-label">Name</label>
+                  <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
+               </div>
+               <div class="form-control">
+                  <label for="list-add-type" class="form-label">Type</label>
+                  <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Type animal type">
+               </div>
+               <div class="form-control">
+                  <label for="list-add-breed" class="form-label">Breed</label>
+                  <input id="list-add-breed" type="text" class="form-input" data-role="none" placeholder="Type animal breed">
+               </div>
+            </div>
+            <div class="modal-foot">
+               <input type="submit" value="Save" data-role="none">
+            </div>
+         </div>
+      </div>-->
+
+      <footer data-role="footer">
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+
+            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+
+
+      </div>
+   </section>
+
+
+
+   <section data-role="page" id="user-profile-page">
+      <header data-role="header">
+         <h1>User Profile</h1>
+          <ul>
+            <li class="flex-none">
+               <a href="#" data-rel="back">Back</a></li>
+             <li class="flex-stretch"></li>           
+         </ul>        
+      </header>
+      <div data-role="main">
+         <div class="overscroll">
+            <div class="grid gap piggylist">
+
+            <div class="piggypro">
+            <a href="#piggy-profile-page" class="display-block">
+              <figure class="user-figure">
+
+                  <img src="images/userimage.jpg" alt class="image" style="border-radius: 50%; padding: 1em 4em;">   
+
+             <figcaption class="piggy-desc">
+               
+             </figcaption>
+            </figure>
+            </a>
+            </div>
+
+         <div class="piggypro">
+            <a href="#piggy-profile-page" class="display-block">
+              <figure class="piggy-figure">
+             <figcaption class="piggy-desc">
+               <div>
+                  <h3 class="title">Edit</h3>
+               </div>               
+             </figcaption>
+             <figcaption class="piggy-desc">
+               <div class="piggy-profile">
+                  <div class="piggy-head">Profile</div>
+                  <div class="piggy-body">
+                     <div class="piggy-desciption"><h4>Name:</h4>Go Go</div>
+                     <div class="piggy-desciption"><h4>Color:</h4>Black White Brown</div>
+                     <div class="piggy-desciption"><h4>Breed:</h4>American Guinea Pig</div>
+                  </div>
+               </div>
+               </figcaption>
+            </figure>
+            </a>
+            </div>
+
+         </div>
+      </div>
+
+      </div>
+      <footer data-role="footer">
+         <ul>
+            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+   </section>
+
+
+    <section data-role="page" id="piggy-profile-page">
+      <header data-role="header">
+         <h1>Animal Profile</h1>
+         <ul>
+            <li class="flex-none">
+               <a href="#" data-rel="back">Back</a></li>
+             <li class="flex-stretch"></li>           
+         </ul>
+      </header>
+      <div data-role="main">
+         <div class="overscroll">
+            <div class="grid gap piggylist">
+
+            <div class="piggypro">
+            <a href="#piggy-profile-page" class="display-block">
+              <figure class="piggy-figure">
+               <div class="piggy-image">
+                  <img src="images/piggyimg.jpg" alt>   
+               </div>
+             <figcaption class="piggy-desc">
+               <div>
+                  <h3 class="title">Edit</h3>
+               </div>               
+             </figcaption>
+            </figure>
+            </a>
+            </div>
+
+         <div class="piggypro">
+            <a href="#piggy-profile-page" class="display-block">
+              <figure class="piggy-figure">
+             <figcaption class="piggy-desc">
+               <div>
+                  <h3 class="title">Edit</h3>
+               </div>               
+             </figcaption>
+             <figcaption class="piggy-desc">
+               <div class="piggy-profile">
+                  <div class="piggy-head">Profile</div>
+                  <div class="piggy-body">
+                     <div class="piggy-desciption"><h4>Name:</h4>Go Go</div>
+                     <div class="piggy-desciption"><h4>Color:</h4>Black White Brown</div>
+                     <div class="piggy-desciption"><h4>Breed:</h4>American Guinea Pig</div>
+                  </div>
+               </div>
+               </figcaption>
+            </figure>
+            </a>
+            </div>
+
+         </div>
+      </div>
+
+      </div>
+      <footer data-role="footer">
+         <ul>
+            <li><a href="#recent-page">Recent</a></li>
+            <li><a href="#list-page">List</a></li>
+            <li><a href="#user-profile-page">Profile</a></li>
+         </ul>
+      </footer>
+
+
+  <!--      <div data-role="main">
+         <div class="overscroll">
+            <div class="profile display-flex">
+               <div class="profile-content">
+                 <header data-role="header">
+         <ul>
+            <li class="flex-none">
+               <a href="#" data-rel="back">Back</a></li>
+             <li class="flex-stretch"></li>           
          </ul>
       </header>
       <div data-role="main">
          Animal Profile
-      </div>
-   </section>
+      </div>-->
+
+
+   </section> 
+     
 
 </body>
 </html>
