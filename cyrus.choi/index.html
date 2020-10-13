@@ -76,11 +76,20 @@
 
    <section data-role="page" id="recent-page">
       <div data-role="main">
+
          <div class="floater top right">
             <div class="btn-circle" data-activate="#recent-profile-modal">&equiv;</div>
          </div>
          <div class="floater bottom right">
             <div class="btn-circle" data-activate="#list-add-modal">&plus;</div>
+         </div>
+          <div class="floater recent">
+            <img src="images/piggyimg.jpg" alt 
+                 class="recentimage" id="profilephoto">    
+            <img src="images/piggyimg2.jpg" alt 
+                 class="recentimage" id="profilephoto">
+            <img src="images/piggyimg3.jpg" alt 
+                 class="recentimage" id="profilephoto">                                     
          </div>
 
 
@@ -156,6 +165,7 @@
 
       </header>
       <div data-role="main">
+               
           <div class="floater bottom right">
             <div class="btn-circle" data-activate="#piggy-add-modal">&plus;</div>
          <!-- <div class="btn-circle" data-activate="#piggy-add-modal">&plus;</div> 
@@ -199,7 +209,7 @@
             <a href="#piggy-profile-page" class="display-block">
               <figure class="piggy-figure">
                <div class="piggy-image">
-                  <img src="images/piggyimg.jpg" alt>   
+                  <img src="images/piggyimg2.jpg" alt>   
                </div>
              <figcaption class="piggy-desc">
                <div>
@@ -214,7 +224,7 @@
             <a href="#piggy-profile-page" class="display-block">
               <figure class="piggy-figure">
                <div class="piggy-image">
-                  <img src="images/piggyimg.jpg" alt>   
+                  <img src="images/piggyimg4.jpg" alt>   
                </div>
              <figcaption class="piggy-desc">
                <div>
@@ -229,7 +239,7 @@
             <a href="#piggy-profile-page" class="display-block">
               <figure class="piggy-figure">
                <div class="piggy-image">
-                  <img src="images/piggyimg.jpg" alt>   
+                  <img src="images/piggyimg3.jpg" alt>   
                </div>
              <figcaption class="piggy-desc">
                <div>
@@ -246,7 +256,8 @@
 
       <div class="modal" id="piggy-add-modal">
          <div class="modal-back" data-deactivate="#piggy-add-modal"></div>
-         <form id="list-add-form" data-ajax="false" class="modal-popup">
+         <form id="list-add-form" data-ajax="false" >
+          <div class="modal-popup">
             <div class="modal-head">Add Animal</div>
             <div class="modal-body">
                <div class="form-control">
@@ -265,6 +276,7 @@
             <div class="modal-foot">
                <input type="submit" value="Save" data-role="none">
             </div>
+          </div>
          </div>
       </div>
 
@@ -335,7 +347,8 @@
 
          <div class="piggypro">
             <a href="#piggy-profile-page" class="display-block">
-              <figure class="piggy-figure">
+            <figure class="piggy-figure">
+            </a>
              <figcaption class="piggy-desc">
                <div>
                   <h3 class="title">Edit</h3>
@@ -345,14 +358,22 @@
                <div class="piggy-profile">
                   <div class="piggy-head">Profile</div>
                   <div class="piggy-body">
-                     <div class="piggy-desciption"><h4>Name:</h4>Go Go</div>
-                     <div class="piggy-desciption"><h4>Color:</h4>Black White Brown</div>
-                     <div class="piggy-desciption"><h4>Breed:</h4>American Guinea Pig</div>
+                     <div class="piggy-desciption"><h4>Name:</h4>Cyrus</div>
+                     <div class="piggy-desciption"><h4>Email:</h4>gmail.com</div>                     
                   </div>
                </div>
                </figcaption>
+                          
             </figure>
-            </a>
+
+               <figcaption class="piggy-desc">
+               <div class="piggy-profile">
+                  <div class="button-body">
+                    <p><a href="#" class="js-logout">Logout</a></p>                
+                  </div>
+               </div>
+               </figcaption>           
+            
             </div>
 
          </div>
