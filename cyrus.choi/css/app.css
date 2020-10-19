@@ -581,7 +581,6 @@ a:hover {
 /* Hover */
 
 .piggy-point:hover {
-  opacity: 1;
     transition: 0.3s all;
     transform: scale(2,2);
 }
