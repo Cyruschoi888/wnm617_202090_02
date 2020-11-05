@@ -33,7 +33,7 @@
 
 // ANIMAL TEMPLATE
 [
-  '{{repeat(10)}}',
+  '{{repeat(50)}}',
   {
     id: '{{index(1)}}',
     user_id:'{{integer(1,10)}}',
@@ -71,10 +71,10 @@
 
 // LOCATION TEMPLATE
 [
-  '{{repeat(10)}}',
+  '{{repeat(250)}}',
   {
     id: '{{index(1)}}',
-    piggy_id:'{{integer(1,10)}}',
+    piggy_id:'{{integer(1,50)}}',
     
     
     lat: '{{floating(37.797468,37.747675)}}',
