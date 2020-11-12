@@ -75,12 +75,28 @@ function makeStatement($data) {
       case "animals_by_user_id":
          return makeQuery($c,"SELECT * FROM track_piggys WHERE user_id = ?",$p);
       case "locations_by_animal_id":
-         return makeQuery($c,"SELECT * FROM track_locations WHERE animal_id = ?",$p);
+         return makeQuery($c,"SELECT * FROM track_locations WHERE piggy_id = ?",$p);
 
 
 
       case "check_signin":
          return makeQuery($c,"SELECT * FROM track_users WHERE username = ? AND password = md5(?)",$p);
+
+
+
+      case "recent_locations":
+         return makeQuery($c,"SELECT * FROM
+            `track_piggys` a
+            LEFT JOIN (
+               SELECT * FROM `track_locations`
+               ORDER BY `date_create` DESC
+            ) l
+            ON a.id = l.piggy_id
+            WHERE user_id = ?
+            GROUP BY l.piggy_id
+            ",$p);
+
+
 
       default: return ["error"=>"No Matched type"];
    }

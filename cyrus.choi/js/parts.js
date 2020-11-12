@@ -1,5 +1,5 @@
 
-
+ 
 const makeAnimalList = templater(o=>`
             <div class="piggycol">
             <a href="#piggy-profile-page" class="display-block">
@@ -16,6 +16,7 @@ const makeAnimalList = templater(o=>`
             </a>
             </div>
 `);
+
 
 
 const makeUserProfile = templater(o=>`

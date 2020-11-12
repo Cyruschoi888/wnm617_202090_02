@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+   
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Animal Tracker</title>
@@ -13,12 +15,16 @@
    <script src="lib/js/jquery-2.2.4.min.js"></script>
 
    <script src="js/functions.js"></script>
+   <script src="js/maps.js"></script>   
    <script src="js/pages.js"></script>   
    <script src="js/parts.js"></script> 
    <script src="js/signin.js"></script>
    <script src="js/app.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKkn3FQrSJ5R744tPulnXGsSfryulLETI" defer></script>
 
 </head>
 <body>
@@ -79,6 +85,7 @@
 
    <section data-role="page" id="recent-page">
       <div data-role="main">
+        <div class="map"></div>
 
         <div class="searchbar" style="width:calc(100% - 2em)">
            <form id="recent-search" class="hotdog light soft" data-ajax="false">
