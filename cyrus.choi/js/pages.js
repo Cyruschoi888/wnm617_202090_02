@@ -20,7 +20,30 @@ const RecentPage = async() => {
    //console.log(map_el.data('map'))
 
    makeMarkers(map_el,valid_animals);
+   // makeMarkers(map_el,[]);
 
+   map_el.data("markers").forEach((o,i)=>{
+      o.addListener("click",function(){
+         // console.log("honk")
+
+         /*
+         // SIMPLE EXAMPLE
+         sessionStorage.animalId = valid_animals[i].piggy_id;
+         $.mobile.navigate("#piggy-profile-page");
+         */
+
+         // INFOWINDOW EXAMPLE
+         // map_el.data("infoWindow")
+         //    .open(map_el.data("map"),o);
+         // map_el.data("infoWindow")
+         //    .setContent(makeAnimalPopup(valid_animals[i]));
+
+         // ACTIVATE EXAMPLE
+         $("#recent-animal-modal").addClass("active");
+         $("#recent-animal-modal .modal-body")
+            .html(makeAnimalPopup(valid_animals[i]))
+      })
+   })
 }
 
 
@@ -52,6 +75,20 @@ const UserProfilePage = async() => {
 }
 
 
+const UserProfileEditPage = async() => {
+   query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   }).then(d=>{
+      console.log(d)
+
+      $("#user-edit-page [data-role='main']")
+         .html(makeUserProfileUpdateForm(d.result[0]));
+   });
+}
+
+
+
 
 const AnimalProfilePage = async() => {
    let d = await query({
@@ -77,3 +114,15 @@ const AnimalProfilePage = async() => {
 }
 
 
+
+const AnimalProfileEditPage = async() => {
+   query({
+      type:'animal_by_id',
+      params:[sessionStorage.animalId]
+   }).then(d=>{
+      console.log(d)
+
+      $("#piggy-edit-paged")
+         .html(makeAnimalProfileUpdateForm(d.result[0]));
+   });
+}

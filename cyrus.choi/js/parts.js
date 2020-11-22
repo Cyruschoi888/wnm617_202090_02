@@ -31,12 +31,29 @@ const makeUserProfile = templater(o=>`
 `);
 
 const makeAnimalProfile = templater(o=>`
-<div class="profile-image">
-   <img src="${o.img}" alt="">
-</div>
-<div class="profile-body">
-   <div class="profile-name">${o.name}</div>
-   <div class="profile-type"><strong>Type</strong>: ${o.type}</div>
-   <div class="profile-breed"><strong>Breed</strong>: ${o.breed}</div>
-</div>
+         <div class="piggypro">
+            <a href="#piggy-profile-page" class="display-block">
+              <figure class="piggy-figure">
+             <figcaption class="piggy-desc">
+              <a href="#piggy-edit-page"> 
+               <div>
+                  <h3 class="title">Edit</h3>
+               </div>   
+              </a>            
+             </figcaption>
+             <figcaption class="piggy-desc">
+               <div class="piggy-profile">
+                  <div class="piggy-head">Profile</div>
+                  <div class="piggy-body">
+                     <div class="piggy-desciption"><h4>Name:</h4>${o.name}</div>
+                     <div class="piggy-desciption"><h4>Color:</h4>${o.color}</div>
+                     <div class="piggy-desciption"><h4>Breed:</h4>${o.breed}</div>
+                  </div>
+               </div>
+               </figcaption>
+            </figure>
+            </a>
+            </div>
+
 `);
+
