@@ -33,15 +33,17 @@ const RecentPage = async() => {
          */
 
          // INFOWINDOW EXAMPLE
-         // map_el.data("infoWindow")
-         //    .open(map_el.data("map"),o);
-         // map_el.data("infoWindow")
-         //    .setContent(makeAnimalPopup(valid_animals[i]));
+          map_el.data("infoWindow")
+             .open(map_el.data("map"),o);
+          map_el.data("infoWindow")
+         //    .setContent("hello");
+         //    .setContent(valid_animals[i].name);
+             .setContent(makeAnimalPopup(valid_animals[i]));
 
          // ACTIVATE EXAMPLE
-         $("#recent-animal-modal").addClass("active");
-         $("#recent-animal-modal .modal-body")
-            .html(makeAnimalPopup(valid_animals[i]))
+         //$("#recent-animal-modal").addClass("active");
+         //$("#recent-animal-modal .modal-body")
+         //   .html(makeAnimalPopup(valid_animals[i]))
       })
    })
 }
