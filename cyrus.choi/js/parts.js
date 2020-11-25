@@ -30,6 +30,8 @@ const makeUserProfile = templater(o=>`
 <p><a href="#settings-page">Settings</a></p>
 `);
 
+
+
 const makeAnimalProfile = templater(o=>`
          <div class="piggypro">
             <a href="#piggy-profile-page" class="display-block">
@@ -56,6 +58,8 @@ const makeAnimalProfile = templater(o=>`
             </div>
 
 `);
+
+
 
 const makeAnimalPopup = o=>`
 <div class="display-flex">
