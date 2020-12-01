@@ -1,7 +1,7 @@
 
  
 const makeAnimalList = templater(o=>`
-            <div class="piggycol">
+            <div class="piggycol js-animal-jump" data-id="${o.id}">
             <a href="#piggy-profile-page" class="display-block">
               <figure class="piggy-figure">
                <div class="piggy-image">
@@ -10,7 +10,7 @@ const makeAnimalList = templater(o=>`
              <figcaption class="piggy-desc">
                <div>
                   <h3 class="title">${o.name}</h3>
-                  <h3 class="title">${o.breed}</h3>
+                  <h5 class="title">${o.breed}</h5>
                </div>                            
              </figcaption>
             </figure>
@@ -37,14 +37,26 @@ const makeAnimalProfile = templater(o=>`
 <div class="profile-image">
    <img src="${o.img}" alt="">
 </div>
-<div class="profile-body">
-   <div class="profile-name">${o.name}</div>
-   <div class="profile-type"><strong>Breed</strong>: ${o.breed}</div>
-   <div class="profile-breed"><strong>Color</strong>: ${o.color}</div>
-</div>
 <div>
-   <a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a>
-</div>
+ <figure class="piggy-detail">
+    <figcaption class="piggy-desc">
+       <div class="piggy-name">${o.name}</div>
+       <div class="piggy-body">
+          <div class="piggy-desciption"><h4>Breed:</h4>${o.breed}</div>
+          <div class="piggy-desciption"><h4>Color:</h4>${o.color}</div>                   
+       </div>
+    </figcaption>
+ </figure>
+
+      <figcaption class="piggy-desc">
+   <div class="piggy-profile">
+      <div class="button-body">
+         <p><a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a></p>                
+      </div>
+   </div>
+   </figcaption>   
+ </div>
+
 `);
 
 
@@ -61,7 +73,7 @@ const makeAnimalPopup = o=>`
 </div>
 </div>
 <div>
-<a href="#" class="form-button js-animal-jump" data-id="${o.animal_id}">Visit</a> 
+<a href="#" class="form-button js-animal-jump" data-id="${o.piggy_id}">Visit</a> 
 </div>
 `;
 
@@ -85,25 +97,26 @@ ${FormControl({
 })}
 ${FormControl({
    namespace:"animal-edit",
-   name:"type",
-   displayname:"Type",
-   type:"text",
-   placeholder:"Choose An Animal Type",
-   value:o.type
-})}
-${FormControl({
-   namespace:"animal-edit",
    name:"breed",
    displayname:"Breed",
    type:"text",
-   placeholder:"Type Animal Breed",
+   placeholder:"Choose An Animal Breed",
    value:o.breed
+})}
+${FormControl({
+   namespace:"animal-edit",
+   name:"color",
+   displayname:"Color",
+   type:"text",
+   placeholder:"Type Animal Color",
+   value:o.color
 })}
 <div class="form-control">
    <label for="animal-edit-description" class="form-label">Description</label>
    <textarea id="animal-edit-description" class="form-input" data-role="none" placeholder="Type animal description">${o.description}</textarea>
 </div>
 `;
+
 
 
 const makeUserEditForm = o => `

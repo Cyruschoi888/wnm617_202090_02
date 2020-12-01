@@ -150,12 +150,12 @@ const LocationAddPage = async() => {
       let posFromClick = {
          lat:e.latLng.lat(),
          lng:e.latLng.lng(),
-         icon:"img/icon/marker.svg"
+         icon:"images/marker.svg"
       };
       let posFromCenter = {
          lat:map.getCenter().lat(),
          lng:map.getCenter().lng(),
-         icon:"img/icon/marker.svg"
+         icon:"images/marker.svg"
       };
 
       $("#location-add-lat").val(posFromClick.lat)

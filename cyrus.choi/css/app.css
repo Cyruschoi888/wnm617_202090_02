@@ -63,6 +63,14 @@ h4{
     color: #E19D5C;
 }
 
+h5{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight:normal;
+    margin-top: 0.2em;
+    margin-bottom: : 0.4em;
+    color: #E19D5C;
+}
 
 
 
@@ -204,8 +212,8 @@ a:hover {
    justify-content:center;
 }
 #piggy-profile-page .profile-image img {
-    width: calc(100vw - 8em);
-    height: calc(100vw - 8em);
+    width: calc(100vw - 10em);
+    height: calc(100vw - 10em);
 }
 
 
@@ -326,7 +334,6 @@ a:hover {
 
 
 .button-body {
-    padding: 0.1em;
     text-align: center;
 }
 .piggy-profile {
@@ -339,6 +346,26 @@ a:hover {
 .piggy-head, .piggy-foot {
     background-color: var(--color-neutral-lighter);
     padding: 0.5em 1em;
+}
+
+.piggy-name{
+    background-color: #A86434;
+    padding: 0.5em 8.5em;
+    color:white;
+}
+
+.piggy-detail{
+ border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 1em;
+    height: 100%;
+}
+}
+
+.piggy-detail figcaption {
+    padding-left: 0em;
+    background-color: white;
 }
 
 .piggy-desciption {
