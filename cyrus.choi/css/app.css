@@ -185,6 +185,30 @@ a:hover {
     height: 100%;
 }
 
+.profile-name {
+   font-size:1.5em;
+   margin-bottom: 1em;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: calc(100vw - 4em);
+    height: calc(100vw - 4em);
+    object-fit: cover;
+    margin: 2em;
+}
+
+#piggy-profile-page .profile-image {
+   display:flex;
+   align-items:center;
+   justify-content:center;
+}
+#piggy-profile-page .profile-image img {
+    width: calc(100vw - 8em);
+    height: calc(100vw - 8em);
+}
+
+
 /* FORMS */
 .form-control {
     margin: 1em 0;

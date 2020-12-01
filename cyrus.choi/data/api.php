@@ -126,7 +126,7 @@ function makeStatement($data) {
       case "insert_location":
          $r = makeQuery($c,"INSERT INTO
             `track_locations`
-            (`animal_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
+            (`piggy_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
             VALUES
             (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=LOCATION', 'https://via.placeholder.com/100/?text=ICON', NOW())
             ",$p,false);
@@ -167,17 +167,6 @@ function makeStatement($data) {
 
       case "delete_location":
          return makeQuery($c,"DELETE FROM `track_locations` WHERE `id` = ?",$p,false);
-
-
-      default: return ["error"=>"No Matched type"];
-   }
-}
-
-
-
-
-
-
 
 
       default: return ["error"=>"No Matched type"];

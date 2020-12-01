@@ -60,8 +60,10 @@ const ListPage = async() => {
    console.log(d)
 
    $("#list-page .piggylist")
-      .html(makeAnimalList(d.result));
+      .html(d.result.length?makeAnimalList(d.result):'Piggys are cute, try to find and add them here.');
 }
+
+
 
 
 const UserProfilePage = async() => {
@@ -77,17 +79,20 @@ const UserProfilePage = async() => {
 }
 
 
-const UserProfileEditPage = async() => {
+
+const UserEditPage = async() => {
    query({
       type:'user_by_id',
       params:[sessionStorage.userId]
    }).then(d=>{
       console.log(d)
 
-      $("#user-edit-page [data-role='main']")
-         .html(makeUserProfileUpdateForm(d.result[0]));
+      $("#user-edit-form")
+         .html(makeUserEditForm(d.result[0]));
    });
 }
+
+
 
 
 
@@ -100,7 +105,7 @@ const AnimalProfilePage = async() => {
 
    console.log(d)
 
-   $("#piggy-profile-page .piggy-profile")
+   $("#piggy-profile-page .profile")
       .html(makeAnimalProfile(d.result));
 
 
@@ -117,17 +122,20 @@ const AnimalProfilePage = async() => {
 
 
 
-const AnimalProfileEditPage = async() => {
+const AnimalEditPage = async() => {
    query({
       type:'animal_by_id',
       params:[sessionStorage.animalId]
    }).then(d=>{
       console.log(d)
 
-      $("#piggy-edit-paged")
-         .html(makeAnimalProfileUpdateForm(d.result[0]));
+      $("#animal-edit-form")
+         .html(makeAnimalEditForm(d.result[0]));
    });
 }
+
+
+
 
 
 const LocationAddPage = async() => {
@@ -156,6 +164,3 @@ const LocationAddPage = async() => {
       makeMarkers(map_el,[posFromClick])
    })
 }
-
-
-
