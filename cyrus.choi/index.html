@@ -4,8 +4,16 @@
 
    
    <meta charset="UTF-8">
+
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="mobile-web-app-capable" content="yes">
+
+   <link rel="apple-touch-icon" href="./site_logo.png">
+   <link rel="icon" href="./site_logo.png">
+
+
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Animal Tracker</title>
+   <title>Piggy Tracker</title>
 
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
    <link rel="stylesheet" href="css/app.css">
@@ -93,8 +101,8 @@
         <div class="map"></div>
 
         <div class="searchbar" style="width:calc(100% - 2em)">
-           <form id="recent-search" class="hotdog light soft" data-ajax="false">
-            <input type="search" data-role="none" class="search" placeholder="Search for Piggy">
+           <form class="hotdog light soft" id="recent-search-form" data-ajax="false">
+            <input type="search" id="recent-search-input" data-role="none" class="search" placeholder="Search for Piggy">
           </form>
         </div>
 
@@ -211,6 +219,11 @@
           <li><a href="#animal-add-page">&plus;</a></li>
         </ul>
       </header>
+
+      <header data-role="header">
+         <div class="filter-list"></div>
+      </header>      
+      
       <div data-role="main">
                            
          <div class="overscroll">

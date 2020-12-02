@@ -1,4 +1,9 @@
 
+const drawAnimalList = (a,empty_phrase='Piggys are cute, try to find and add them here.') => {
+   $("#list-page .piggylist")
+      .html(a.length?makeAnimalList(a):empty_phrase);
+}
+
  
 const makeAnimalList = templater(o=>`
             <div class="piggycol js-animal-jump" data-id="${o.id}">
@@ -147,3 +152,27 @@ ${FormControl({
 `;
 
 
+
+
+const filterList = (animals,breed) => {
+   let a = [...(new Set(animals.map(o=>o[breed])))];
+   return templater(o=>`<div class="filter" data-field="${breed}" data-value="${o}">${o[0].toUpperCase()+o.substr(1)}</div>`)(a);
+}
+
+const makeFilterList = (animals) => {
+   return `
+   <div class="filter" data-field="breed" data-value="all">All</div> | 
+   ${filterList(animals,'breed')} | 
+   ${filterList(animals,'color')} 
+   `;
+}
+
+
+
+
+
+const makeUploaderImage = ({namespace,folder,name}) => {
+   $(`#${namespace}-image`).val(folder+name);
+   $(`#${namespace}-page .image-uploader`)
+      .css({'background-image':`url('${folder+name}')`})
+}

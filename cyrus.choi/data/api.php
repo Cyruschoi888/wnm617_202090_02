@@ -97,6 +97,44 @@ function makeStatement($data) {
             ",$p);
 
 
+      case "search_animals":
+         $p = ["%$p[0]%",$p[1]];
+         return makeQuery($c,"SELECT * FROM
+            `track_piggys` 
+            WHERE
+               `name` LIKE ?
+               AND user_id = ?
+            ",$p);
+
+
+      case "animal_search_recent":
+         $p = ["%$p[0]%",$p[1]];
+         return makeQuery($c,"SELECT * FROM
+            `track_piggys` a
+            LEFT JOIN (
+               SELECT * FROM `track_locations`
+               ORDER BY `date_create` DESC
+            ) l
+            ON a.id = l.piggy_id
+            WHERE 
+               a.name LIKE ?
+               AND a.user_id = ?
+            GROUP BY l.piggy_id
+            ",$p);
+
+
+      case "animal_filter":
+         return makeQuery($c,"SELECT * FROM
+            `track_piggys`
+            WHERE
+               `$p[0]` = ?
+               AND user_id = ?
+            ",[$p[1],$p[2]]);
+
+
+
+
+
 
       // CRUD
 

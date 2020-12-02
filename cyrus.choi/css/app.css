@@ -418,6 +418,8 @@ a:hover {
     margin: 0;
     padding: 0.2em;
     border-radius: 1em;
+    width:100%;
+    flex:1;
 }
 
 
@@ -605,6 +607,18 @@ a:hover {
   top: 10em;
 }
 
+
+
+/* FILTER */
+
+.filter-list {
+    display: flex;
+    overflow: auto;
+}
+.filter {
+    padding: 0px 0.5em;
+    font-weight:bold;
+}
 
 
 

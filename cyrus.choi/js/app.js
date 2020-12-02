@@ -46,6 +46,12 @@ $(()=>{
       checkSignupForm();
    })
 
+    .on("submit","#recent-search-form",function(e){
+      e.preventDefault();
+      checkSearchForm();
+   })
+     
+
 
 
    /* FORM SUBMIT BY BUTTON */
@@ -77,7 +83,7 @@ $(()=>{
       sessionStorage.animalId = $(this).data("id");
       $.mobile.navigate("#piggy-profile-page");
    })
-   
+
    .on("click",".js-location-jump",function(e){
       sessionStorage.locationId = $(this).data("id");
       $.mobile.navigate("#location-profile-page");
