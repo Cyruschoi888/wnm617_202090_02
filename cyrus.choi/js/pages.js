@@ -50,6 +50,19 @@ const RecentPage = async() => {
 
 
 
+//const ListPage = async() => {
+   //let d = await query({
+      //type:'animals_by_user_id',
+      //params:[sessionStorage.userId]
+   //});
+
+   //console.log(d)
+
+   //$("#list-page .piggylist")
+      //.html(d.result.length?makeAnimalList(d.result):'Piggys are cute, try to find and add them here.');
+//}
+
+
 // async and await
 const ListPage = async() => {
    let d = await query({
@@ -57,12 +70,12 @@ const ListPage = async() => {
       params:[sessionStorage.userId]
    });
 
+   $("#list-page .filter-list").html(makeFilterList(d.result))
+
    console.log(d)
 
-   $("#list-page .piggylist")
-      .html(d.result.length?makeAnimalList(d.result):'Piggys are cute, try to find and add them here.');
+   drawAnimalList(d.result);
 }
-
 
 
 

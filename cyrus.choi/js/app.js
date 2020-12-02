@@ -92,8 +92,26 @@ $(()=>{
    .on("click",".js-animal-delete",function(e){
       checkAnimalDelete($(this).data("id"));
    })
+   .on("click",".js-user-upload",function(e){
+      checkUserUpload();
+   })
 
 
+
+   .on("click",".filter",function(e){
+      checkListFilter($(this).data());
+   })
+   .on("change",".image-uploader input",function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         makeUploaderImage({
+            namespace:'user-upload',
+            folder:'uploads/',
+            name:d.result
+         })
+      })
+   })
 
 
 
