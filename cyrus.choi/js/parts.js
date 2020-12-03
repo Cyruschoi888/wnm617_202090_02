@@ -28,6 +28,9 @@ const makeAnimalList = templater(o=>`
 const makeUserProfile = templater(o=>`
 <div class="profile-image">
    <img src="${o.img}" alt="">
+   <div class="floater right bottom">
+      <a href="#user-upload-page"><img class="icon" src="images/pencil.svg"></a>
+   </div>
 </div>
 <div class="profile-body">
    <div class="profile-name">${o.name}</div>
@@ -35,6 +38,7 @@ const makeUserProfile = templater(o=>`
 </div>
 <p><a href="#settings-page">Settings</a></p>
 `);
+
 
 
 

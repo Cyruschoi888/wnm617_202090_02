@@ -198,7 +198,11 @@ a:hover {
    margin-bottom: 1em;
 }
 
-.profile-image img {
+.profile-image{
+  position: relative;
+}
+
+.profile-image>img {
     border-radius: 50%;
     width: calc(100vw - 4em);
     height: calc(100vw - 4em);
@@ -350,7 +354,7 @@ a:hover {
 
 .piggy-name{
     background-color: #A86434;
-    padding: 0.5em 8.5em;
+    padding: 0.5em 8em;
     color:white;
 }
 
@@ -697,3 +701,34 @@ a:hover {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     font-size: 1.5em;
 }
+
+
+
+
+
+
+.icon {
+   width:1.5em;
+   height:1.5em;
+   vertical-align: middle;
+}
+
+
+
+.image-uploader.full {
+   position:absolute;
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
+
+   background-size:contain;
+   background-repeat:no-repeat;
+}
+.ui-mobile label.image-uploader {
+   margin:0;
+}
+.image-uploader input {
+   display:none;
+}
+

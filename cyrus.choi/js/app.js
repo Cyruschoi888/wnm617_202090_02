@@ -21,6 +21,7 @@ $(()=>{
 
          case 'user-profile-page': UserProfilePage(); break;
          case 'user-edit-page': UserEditPage(); break;
+         case 'user-upload-page': UserUploadPage(); break;
 
          case 'piggy-profile-page': AnimalProfilePage(); break;
          case 'animal-edit-page': AnimalEditPage(); break;
