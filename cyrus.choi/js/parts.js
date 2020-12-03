@@ -26,17 +26,45 @@ const makeAnimalList = templater(o=>`
 
 
 const makeUserProfile = templater(o=>`
-<div class="profile-image">
-   <img src="${o.img}" alt="">
-   <div class="floater right bottom">
-      <a href="#user-upload-page"><img class="icon" src="images/pencil.svg"></a>
-   </div>
-</div>
-<div class="profile-body">
-   <div class="profile-name">${o.name}</div>
-   <div class="profile-email"><strong>Email</strong>: ${o.email}</div>
-</div>
-<p><a href="#settings-page">Settings</a></p>
+            <div class="profile-image">
+               <img src="${o.img}" alt="">
+               <div class="floater right bottom">
+                  <a href="#user-upload-page"><img class="icon" src="images/pencil.svg"></a>
+               </div>             
+           </div>
+
+         <div class="piggypro">
+            <a href="#piggy-profile-page" class="display-block">
+            <figure class="piggy-figure">
+            </a>
+
+             <figcaption class="piggy-desc">
+               <div>
+                  <h3 class="title"></h3>
+               </div>               
+             </figcaption>
+
+             <figcaption class="piggy-desc">
+               <div class="piggy-profile">
+                  <div class="piggy-body">
+                     <div class="piggy-desciption"><h4>Name:</h4>${o.username}</div>
+                     <div class="piggy-desciption"><h4>Full Name:</h4>${o.name}</div>
+                     <div class="piggy-desciption"><h4>Email:</h4>${o.email}</div>                     
+                  </div>
+               </div>
+               </figcaption>
+                          
+            </figure>
+
+               <figcaption class="piggy-desc">
+               <div class="piggy-profile">
+                  <div class="button-body">
+                    <p><a href="#" class="js-logout">Logout</a></p>                
+                  </div>
+               </div>
+               </figcaption>           
+            
+            </div>
 `);
 
 
@@ -56,7 +84,6 @@ const makeAnimalProfile = templater(o=>`
        </div>
     </figcaption>
  </figure>
-
       <figcaption class="piggy-desc">
    <div class="piggy-profile">
       <div class="button-body">
@@ -65,7 +92,6 @@ const makeAnimalProfile = templater(o=>`
    </div>
    </figcaption>   
  </div>
-
 `);
 
 

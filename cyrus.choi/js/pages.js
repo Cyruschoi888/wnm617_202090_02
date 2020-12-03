@@ -87,7 +87,7 @@ const UserProfilePage = async() => {
 
    console.log(d)
 
-   $("#user-profile-page .profile")
+   $("#user-profile-page .piggylist")
       .html(makeUserProfile(d.result));
 }
 
