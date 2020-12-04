@@ -54,20 +54,24 @@ const makeUserProfile = templater(o=>`
                </div>
                </figcaption>
                           
-            </figure>
-
-               <figcaption class="piggy-desc">
-               <div class="piggy-profile">
-                  <div class="button-body">
-                    <p><a href="#" class="js-logout">Logout</a></p>                
-                  </div>
-               </div>
-               </figcaption>           
+            </figure>       
             
             </div>
 `);
 
-
+const makeModalProfile = o =>`
+                   <div class="backgroundcolor-profile">
+                     <div class="flex-none" style="text-align: center">
+                        <a href="#settings-profile-upload-page">
+                           <img src="${o.img}" alt 
+                           class="userimage" id="profilephoto">
+                         </a>
+                             <h3 style="color:white;"></h3>
+                             <div style="color:white;"><h2>${o.username}</h2></div>
+                             <div style="color:white;"><h2>${o.email}</h2></div>
+                      </div>
+                     </div>
+`;
 
 
 const makeAnimalProfile = templater(o=>`

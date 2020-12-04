@@ -127,25 +127,24 @@
             <div class="modal-drawer left">
                <div class="scrollable">
                   <div class="profile" id="user-profile">
-                   <div class="backgroundcolor-profile">
+                  <!--  <div class="backgroundcolor-profile">
                      <div class="flex-none" style="text-align: center">
                         <a href="#settings-profile-upload-page">
                            <img src="https://via.placeholder.com/400/?text=USER" alt 
                            class="userimage" id="profilephoto">
                          </a>
-                  <h3 style="color:white;"></h3>
-                  <div style="color:white;"><h2>user1</h2></div>
-                  <div style="color:white;"><h2>user1@gmail.com</h2></div>
+                             <h3 style="color:white;"></h3>
+                             <div style="color:white;"><h2>user1</h2></div>
+                             <div style="color:white;"><h2>user1@gmail.com</h2></div>
                       </div>
-                     </div>
+                     </div>-->
                   </div>
                   
                   <div class="profile-body">
                      <ul class="profile-settings">
                         <li><a href="#user-profile-page">Profile</a></li>
                         <li><a href="#user-edit-page">Settings</a></li>
-                        <li><a>Help</a></li>
-                        <li><a>Privacy</a></li>
+                        <li><a href="#" class="js-logout">Logout</a></li>
                      </ul>
                   </div>
                   </div>
@@ -237,29 +236,30 @@
 
 
       <footer data-role="footer">
+      <div class="nav-mobile-grow-icon">
+        <div class="nav-mobile-hump">
          <ul>
             <li><a href="#recent-page" class="ui-link">
               <div class="nav-icon">
                 <img src="images/map.svg" alt>
               </div>
-              <div class="nav-label">Map</div>
             </a>
           </li>
-            <li><a href="#list-page" class="ui-link">
+            <li class="active"><a href="#list-page" class="ui-link">
               <div class="nav-icon">
                 <img src="images/piggy.svg" alt>
               </div>
-              <div class="nav-label">Piggy</div>
             </a>
           </li>
             <li><a href="#user-profile-page" class="ui-link">
               <div class="nav-icon">
                 <img src="images/account.svg" alt>
               </div>
-              <div class="nav-label">My Account</div>
             </a>
           </li>
          </ul>
+        </div>
+       </div>
       </footer>
 
 
@@ -301,7 +301,7 @@
 
    <section data-role="page" id="animal-add-page">
       <header data-role="header">
-         <h1>About the Piggy</h1>
+         <h1>Add Piggy</h1>
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
@@ -419,6 +419,31 @@
       </div>
 
       </div>
+
+       <footer data-role="footer">
+        <div class="nav-mobile-hump">
+         <ul>
+            <li><a href="#recent-page" class="ui-link">
+              <div class="nav-icon">
+                <img src="images/map.svg" alt>
+              </div>
+            </a>
+          </li>
+            <li><a href="#list-page" class="ui-link">
+              <div class="nav-icon">
+                <img src="images/piggy.svg" alt>
+            </a>
+          </li>
+            <li><a href="#user-profile-page" class="ui-link">
+              <div class="nav-icon">
+                <img src="images/account.svg" alt>
+              </div>
+            </a>
+          </li>
+         </ul>
+        </div>
+      </footer> 
+
    </section>
 
 

@@ -151,6 +151,15 @@ const checkListFilter = async (d) => {
 }
 
 
+const checkRecentSearch = (s) => {
+   query({
+      type:'animal_search_recent',
+      params:[`%${s}%`,sessionStorage.userId]
+   }).then(d=>{
+      console.log(d)
+      RecentPage(d)
+   })
+}
 
 
 const checkUpload = file => {

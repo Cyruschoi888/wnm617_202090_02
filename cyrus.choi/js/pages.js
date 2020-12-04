@@ -1,52 +1,52 @@
 
-const RecentPage = async() => {
+// const RecentPage = async() => {
 
-   let d = await query({
-      type:'recent_locations',
-      params:[sessionStorage.userId]
-   });
+//    let d = await query({
+//       type:'recent_locations',
+//       params:[sessionStorage.userId]
+//    });
 
-   console.log(d)
+//    console.log(d)
 
-   let valid_animals = d.result.reduce((r,o)=>{
-      o.icon = o.img;
-      if(o.lat && o.lng) r.push(o);
-      return r;
-   },[])
+//    let valid_animals = d.result.reduce((r,o)=>{
+//       o.icon = o.img;
+//       if(o.lat && o.lng) r.push(o);
+//       return r;
+//    },[])
 
 
-   let map_el = await makeMap("#recent-page .map");
+//    let map_el = await makeMap("#recent-page .map");
 
-   //console.log(map_el.data('map'))
+//    //console.log(map_el.data('map'))
 
-   makeMarkers(map_el,valid_animals);
-   // makeMarkers(map_el,[]);
+//    makeMarkers(map_el,valid_animals);
+//    // makeMarkers(map_el,[]);
 
-   map_el.data("markers").forEach((o,i)=>{
-      o.addListener("click",function(){
-         // console.log("honk")
+//    map_el.data("markers").forEach((o,i)=>{
+//       o.addListener("click",function(){
+//          // console.log("honk")
 
-         /*
-         // SIMPLE EXAMPLE
-         sessionStorage.animalId = valid_animals[i].piggy_id;
-         $.mobile.navigate("#piggy-profile-page");
-         */
+         
+//          // SIMPLE EXAMPLE
+//          sessionStorage.animalId = valid_animals[i].piggy_id;
+//          $.mobile.navigate("#piggy-profile-page");
+         
 
-         // INFOWINDOW EXAMPLE
-          map_el.data("infoWindow")
-             .open(map_el.data("map"),o);
-          map_el.data("infoWindow")
-         //    .setContent("hello");
-         //    .setContent(valid_animals[i].name);
-             .setContent(makeAnimalPopup(valid_animals[i]));
+//          // INFOWINDOW EXAMPLE
+//           map_el.data("infoWindow")
+//              .open(map_el.data("map"),o);
+//           map_el.data("infoWindow")
+//          //    .setContent("hello");
+//          //    .setContent(valid_animals[i].name);
+//              .setContent(makeAnimalPopup(valid_animals[i]));
 
-         // ACTIVATE EXAMPLE
-         //$("#recent-animal-modal").addClass("active");
-         //$("#recent-animal-modal .modal-body")
-         //   .html(makeAnimalPopup(valid_animals[i]))
-      })
-   })
-}
+//          // ACTIVATE EXAMPLE
+//          //$("#recent-animal-modal").addClass("active");
+//          //$("#recent-animal-modal .modal-body")
+//          //   .html(makeAnimalPopup(valid_animals[i]))
+//       })
+//    })
+// }
 
 
 
@@ -91,6 +91,28 @@ const UserProfilePage = async() => {
       .html(makeUserProfile(d.result));
 }
 
+const ModalPage = async() => {
+
+   console.log("123");
+   let d = await query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   });
+
+   console.log(d)
+
+   $("#recent-profile-modal .profile")
+      .html(makeModalProfile(d.result));
+}
+
+//const ModalPage = async() => {
+   //let d = await query({type:"user_by_id",params:[sessionStorage.userId]});
+   
+
+   //$("#recent-profile-modal .profile")
+            //.html(makeModalProfile(d.result[0]));
+   
+//}
 
 
 const UserEditPage = async() => {
@@ -190,4 +212,38 @@ const LocationAddPage = async() => {
 
       makeMarkers(map_el,[posFromClick])
    })
+}
+
+const RecentPage = async(d=0) => {
+   // if(sessionStorage.alcoholId===undefined) throw("No alcohol ID in Storage");
+   if(!d) d = await query({type:"recent_locations",params:[sessionStorage.userId]});
+
+   
+   let profile = await query({type:"user_by_id",params:[sessionStorage.userId]})
+
+   $("#recent-profile-modal .profile")
+            .html(makeModalProfile(profile.result[0]));
+
+
+
+   
+   let map_el = await makeMap("#recent-page .map");
+
+   let valid_piggys = d.result.reduce((r,o)=>{
+      o.icon = o.img;
+      if(o.lat && o.lng) r.push(o);
+      return r;
+   },[]);
+
+   // console.log(d.result,valid_alcohols)
+
+   makeMarkers(map_el,valid_piggys);
+
+   map_el.data("markers").forEach((o,i)=>{
+      o.addListener("click",function(){
+         // INFOWINDOW EXAMPLE
+         map_el.data("infoWindow").open(map_el.data("map"),o);
+         map_el.data("infoWindow").setContent(makeRecentProfile(valid_piggys[i]))
+})
+   });
 }

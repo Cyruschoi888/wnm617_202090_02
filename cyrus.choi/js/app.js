@@ -49,9 +49,10 @@ $(()=>{
 
     .on("submit","#recent-search-form",function(e){
       e.preventDefault();
-      checkSearchForm();
-   })
-     
+      checkRecentSearch($(this).find(".search").val());
+   })    
+
+
 
 
 
@@ -118,8 +119,11 @@ $(()=>{
 
 
    .on("click","[data-activate]",function(){
+
       let target = $(this).data('activate');
+
       $(target).addClass("active");
+      
    })
    .on("click","[data-deactivate]",function(){
       let target = $(this).data('deactivate');
@@ -142,4 +146,11 @@ $(()=>{
       $(this).html(template);
    })
 
-})
+   $("#recent-profile-modal").on("classChange", function (e) {
+      console.log("hihi")
+    if ($(this).hasClass("active")) {
+      ModalPage();
+    }
+  });
+
+});
