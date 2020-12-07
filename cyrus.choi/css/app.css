@@ -436,6 +436,12 @@ a:hover {
     color: #A86434;
 }
 
+.no-signin {
+    margin-bottom: 0;
+    text-align: center;
+    color: #A86434;
+}
+
 .disapear{
   display: none;
 }

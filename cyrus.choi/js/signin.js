@@ -17,8 +17,9 @@ const checkSigninForm = async () => {
    console.log(user,pass)
 
    if(user=="" || pass=="") {
-      makeWarning("#warning-modal","Type a Username and Password");
-      return;
+      console.log('failure');
+      sessionStorage.removeItem('userId');
+      $( ".failure" ).removeClass( "disapear" );
    }
 
    let found_user = await query({
@@ -35,9 +36,7 @@ const checkSigninForm = async () => {
       // not logged in
       console.log('failure');
       sessionStorage.removeItem('userId');
-
-      // DO SOMETHING HERE
-      makeWarning("#warning-modal","Sign In Failed");
+      $( ".failure" ).removeClass( "disapear" );
    }
 
    checkUserId();

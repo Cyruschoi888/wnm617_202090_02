@@ -243,7 +243,7 @@ const RecentPage = async(d=0) => {
       o.addListener("click",function(){
          // INFOWINDOW EXAMPLE
          map_el.data("infoWindow").open(map_el.data("map"),o);
-         map_el.data("infoWindow").setContent(makeRecentProfile(valid_piggys[i]))
+         map_el.data("infoWindow").setContent(makeAnimalPopup(valid_piggys[i]))
 })
    });
 }
