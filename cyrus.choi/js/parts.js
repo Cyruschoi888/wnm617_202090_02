@@ -1,6 +1,6 @@
 
 const drawAnimalList = (a,empty_phrase='Piggys are cute, try to find and add them here.') => {
-   $("#list-page .piggylist")
+   $("#list-page .overscroll")
       .html(a.length?makeAnimalList(a):empty_phrase);
 }
 

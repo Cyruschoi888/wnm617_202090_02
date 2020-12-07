@@ -266,6 +266,7 @@ a:hover {
 #signin-form,
 #signup-form {
    padding:4em;
+   padding-top:2em;
 }
 .signin-alt {
    padding:1em;
