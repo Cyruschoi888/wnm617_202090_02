@@ -223,7 +223,8 @@ function makeStatement($data) {
                `name` = ?,
                `breed` = ?,
                `color` = ?,
-               `description` = ?
+               `description` = ?,
+               `img` = ?
             WHERE `id` = ?
             ",$p,false);
          return ["result"=>"success"];

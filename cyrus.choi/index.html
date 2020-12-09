@@ -366,6 +366,12 @@
       <div data-role="main">
          <div class="overscroll">
             <form id="location-add-form" data-ajax="false" style="padding:1em">
+               <div>
+                  <input type="hidden" id="location-add-image">
+                  <label class="image-uploader thumbnail">
+                     <input type="file" data-role="none" id="location-add-upload">
+                  </label>
+               </div>            
                <div class="form-control">
                   <label for="location-add-description" class="form-label">Description</label>
                   <textarea id="location-add-description" class="form-input" data-role="none" placeholder="Type location description"></textarea>

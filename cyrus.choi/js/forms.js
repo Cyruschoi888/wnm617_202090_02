@@ -71,10 +71,11 @@ const checkAnimalEditForm = () => {
    let breed = $("#animal-edit-breed").val();
    let color = $("#animal-edit-color").val();
    let description = $("#animal-edit-description").val();
-
+   let image = $("#animal-edit-image").val();
+   
    query({
       type:'update_animal',
-      params:[name,breed,color,description,sessionStorage.animalId]})
+      params:[name,breed,color,description,image,sessionStorage.animalId]})
    .then(d=>{
       if(d.error) {
          throw d.error;
