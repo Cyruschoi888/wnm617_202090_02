@@ -26,6 +26,7 @@ $(()=>{
          case 'piggy-profile-page': AnimalProfilePage(); break;
          case 'animal-edit-page': AnimalEditPage(); break;
 
+
          case 'location-add-page': LocationAddPage(); break;
 
       }

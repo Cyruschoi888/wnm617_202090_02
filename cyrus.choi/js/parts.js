@@ -1,7 +1,9 @@
 
 const drawAnimalList = (a,empty_phrase='Piggys are cute, try to find and add them here.') => {
    $("#list-page .overscroll")
-      .html(a.length?makeAnimalList(a):empty_phrase);
+      .html(a.length?
+        `<div class="grid gap piggylist">${makeAnimalList(a)}</div>`:
+        `<div class="piggy-instructions">${empty_phrase}</div>`);
 }
 
  
@@ -84,7 +86,8 @@ const makeAnimalProfile = templater(o=>`
        <div class="piggy-name">${o.name}</div>
        <div class="piggy-body">
           <div class="piggy-desciption"><h4>Breed:</h4>${o.breed}</div>
-          <div class="piggy-desciption"><h4>Color:</h4>${o.color}</div>                   
+          <div class="piggy-desciption"><h4>Color:</h4>${o.color}</div>
+          <div class="piggy-desciption"><h4>Description:</h4>${o.description}</div>                   
        </div>
     </figcaption>
  </figure>
@@ -187,10 +190,14 @@ ${FormControl({
 
 
 
+const toUppercase = (s) => {
+  return s==''?'':s[0].toUpperCase()+s.substr(1);
+}
+
 
 const filterList = (animals,breed) => {
    let a = [...(new Set(animals.map(o=>o[breed])))];
-   return templater(o=>`<div class="filter" data-field="${breed}" data-value="${o}">${o[0].toUpperCase()+o.substr(1)}</div>`)(a);
+   return templater(o=>`<div class="filter" data-field="${breed}" data-value="${o}">${toUppercase(o)}</div>`)(a);
 }
 
 const makeFilterList = (animals) => {
