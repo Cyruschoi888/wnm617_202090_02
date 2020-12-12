@@ -620,6 +620,14 @@ a:hover {
   left:6em; 
   top: 10em;
 }
+.piggy-instructions{ 
+  position:absolute; 
+  left:1em; 
+  top: 1em;
+}
+
+
+
 
 
 
@@ -675,7 +683,7 @@ a:hover {
     line-height: calc(var(--header-height) * 0.6);
     font-size: 1.5em;
     height: 2em;
-    padding-top: 0.3em;
+    padding-top: 0.1em;
 }
 
 .nav-label {
